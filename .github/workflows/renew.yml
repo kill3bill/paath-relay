@@ -1,7 +1,7 @@
 name: renew-paath-cert
 on:
   schedule:
-    - cron: "0 3 1 */2 *"   # 03:00 on the 1st of every other month (~60d < LE 90d life)
+    - cron: "0 3 1,15 * *"   # 03:00 on the 1st and 15th: each run commits, so one failed run never leaves 60 quiet days)
   workflow_dispatch: {}
 permissions:
   contents: write
